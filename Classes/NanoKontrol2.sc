@@ -40,8 +40,8 @@ NanoKontrol2 {
         ccTrackBtns     = [ 58, 59 ];
         ccCycleBtn      = 46;
 
-        MIDIClient.init;
-        MIDIIn.connectAll;
+        // MIDIClient.init;
+        // MIDIIn.connectAll;
 
         if(ledMode == \external) {
             // Device/Port name might have to be edited to match your setup.
