@@ -45,7 +45,8 @@ NanoKontrol2 {
 
         if(ledMode == \external) {
             // Device/Port name might have to be edited to match your setup.
-            midiOut = MIDIOut.newByName("nanoKONTROL2", "CTRL");
+            // midiOut = MIDIOut.newByName("nanoKONTROL2", "CTRL");
+            midiOut = MIDIOut.newByName("nanoKONTROL2", "nanoKONTROL2 MIDI 1");
         };
 
         this.assignCtls;
