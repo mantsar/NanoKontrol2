@@ -10,7 +10,7 @@ NanoKontrol2 {
     var <sBtns, <mBtns, <rBtns;
     var <>ledMode;
 
-    var ctls, midiOut;
+    var ctls, midiOut, midiOutTest;
     var ccFaders, ccKnobs;
     var ccSBtns, ccMBtns, ccRBtns;
     var ccTransportBtns, ccMarkerBtns, ccTrackBtns, ccCycleBtn;
@@ -44,13 +44,19 @@ NanoKontrol2 {
         // MIDIIn.connectAll;
 
         if(ledMode == \external) {
-            // Device/Port name might have to be edited to match your setup.
-            // midiOut = MIDIOut.newByName("nanoKONTROL2", "CTRL");
+          // Device/Port name might have to be edited to match your setup.
+          // midiOut = MIDIOut.newByName("nanoKONTROL2", "CTRL");
+          try {
+            midiOutTest = nil;
             midiOut = MIDIOut.newByName("nanoKONTROL2", "nanoKONTROL2 MIDI 1");
+            midiOutTest = 1;
+          };
+          if (midiOutTest.isNil) {
+            midiOut = MIDIOut.newByName("nanoKONTROL2", "nanoKONTROL2 nanoKONTROL2 _ CTR");
+          };
         };
-
         this.assignCtls;
-    }
+      }
 
     assignCtls {
         ccFaders.do {|cc, i|
